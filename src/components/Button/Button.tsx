@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CSS from "./Button.module.css";
+import styles from "./Button.module.css";
 
 export default function Button() {
   const [clicks, setClicks] = useState(0);
@@ -9,7 +9,7 @@ export default function Button() {
   };
 
   return (
-    <button className={CSS.button} onClick={handleClick}>
+    <button className={styles.button} onClick={handleClick}>
       Clicked: {clicks}
     </button>
   );

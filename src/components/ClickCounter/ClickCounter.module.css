@@ -1,4 +1,6 @@
 .button {
+  display: block;
+  margin: 0 auto;
   padding: 10px 22px;
   background-color: #0a66c2;
   color: #fff;
@@ -6,10 +8,6 @@
   border-radius: 8px;
   font-size: 16px;
   cursor: pointer;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  margin-right: 10px;
-
   width: 170px;
 }
 .button:hover {
