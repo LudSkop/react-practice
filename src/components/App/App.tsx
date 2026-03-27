@@ -1,29 +1,32 @@
 import Button from "../Button/Button";
 import ClickCounter from "../ClickCounter/ClickCounter";
 import { useState } from "react";
+import Modal from "../Modal/Modal";
 
 export default function App() {
   const [count, setCount] = useState(0);
-  const [isOpen, setIsOpen] = useState(false);
+
   const handleClick = () => {
     setCount(count + 1);
   };
-  const toggleMessage = () => {
-    setIsOpen(!isOpen);
-  };
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <>
+      <div>
+        <h1>Main content of the page</h1>
+        <button onClick={openModal}> Open Modal</button>
+        {isModalOpen && <Modal onClose={closeModal} />}
+      </div>
+
       <Button />
       <Button />
       <Button />
       <ClickCounter value={count} onUpdate={handleClick} />
       <ClickCounter value={count} onUpdate={handleClick} />
-      <ClickCounter value={count} onUpdate={handleClick} />
-      <ClickCounter value={count} onUpdate={handleClick} />
-      <button onClick={toggleMessage}>
-        {isOpen ? "Hide message" : "Show message"}
-      </button>
-      {isOpen && <p>🎉 Surprise! You toggled me.</p>}
     </>
   );
 }
