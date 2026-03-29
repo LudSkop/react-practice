@@ -1,1 +1,15 @@
-
+.openModalButton {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 22px;
+  background-color: #0a66c2;
+  color: #fff;
+  border: 1px solid #5d0ac2;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 170px;
+}
+.openModalButton:hover {
+  background-color: #084a9e;
+}

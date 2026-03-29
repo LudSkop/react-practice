@@ -2,6 +2,7 @@ import Button from "../Button/Button";
 import ClickCounter from "../ClickCounter/ClickCounter";
 import { useState } from "react";
 import Modal from "../Modal/Modal";
+import css from "./App.module.css";
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -18,7 +19,10 @@ export default function App() {
     <>
       <div>
         <h1>Main content of the page</h1>
-        <button onClick={openModal}> Open Modal</button>
+        <button className={css.openModalButton} onClick={openModal}>
+          {" "}
+          Open Modal
+        </button>
         {isModalOpen && <Modal onClose={closeModal} />}
       </div>
 
